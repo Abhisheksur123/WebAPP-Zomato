@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to Your Dashboard, {{ current_user.username }}!</h1>
+    <p><a href="{{ url_for('logout') }}">Log Out</a></p>
+
+    <h2>Your Uploaded Images:</h2>
+    <ul>
+        {% for image in user_images %}
+            <li>{{ image.image_path }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
